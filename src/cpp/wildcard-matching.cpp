@@ -1,6 +1,9 @@
 /**
-* Just need to trace back at the nearest star position
-* @author Hansheng Zhang
+* Wildcard Matching
+* Implement wildcard pattern matching with support for '?' and '*'
+* '?' Matches any single character.
+* '*' Matches any sequence of characters (including the empty sequence).
+* Solution: Just need to trace back at the nearest star position
 */
 class Solution {
 public:
