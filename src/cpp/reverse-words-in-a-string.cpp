@@ -1,7 +1,5 @@
-/**
-* @author Hansheng Zhang (http://zhanghs.com)
-*/
-try to solve the problem without stack
+//try to solve the problem without stack
+
 class Solution {
 public:
     void uniformString(string &);
