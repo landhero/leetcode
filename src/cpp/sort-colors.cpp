@@ -1,35 +1,22 @@
 /**
-* @author Hansheng Zhang
+* Sort Colors
+* Given an array with n objects colored red, white or blue, sort them so that objects of the same color are adjacent, 
+* 	with the colors in the order red, white and blue.
+* Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
+* Solution: Keep A[0..k] to be 0, 0, ..., 1, 1.
 */
+
 class Solution {
 public:
-    void sortColors(int A[], int n) {
-        // IMPORTANT: Please reset any member data you declared, as
-        // the same Solution instance will be reused for each test case.
-        int i =0 ,j = n-1;
-        while (i<n && A[i]==0)
-            i++;
-        while (j>=0 && A[j]==2)
-            j--;
-        int tmp;
-        for (int k=i; k<=j; k++){
-            if (A[k]==0){
-                A[k]= A[i];
-                A[i] = 0;
-                while (i<n && A[i]==0)
-                    i++;
-                k = i-1;
-                continue;
-            }
-            if (A[k]==2){
-                A[k] = A[j];
-                A[j] = 2;
-                while (j>=0 && A[j]==2)
-                    j--;
-                k--;
-                continue;
-            }
-        }
-        return;
-    }
+    void sortColors(int A[], int n);
 };
+
+void Solution::sortColors(int A[], int n){
+	int i=0, j=n-1;
+	for (int k=i; k<=j; k++){
+		while (A[k]==2 && k<j)
+			swap(A[k], A[j--]);
+		if (A[k]==0)
+			swap(A[k], A[i++]);
+	}
+}
